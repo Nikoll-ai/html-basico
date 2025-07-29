@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Imagen Líquida RGB</title>
+  <style>
+    body {
+      margin: 0;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    svg {
+      width: 80%;
+      height: auto;
+    }
+
+    .r { transform: translate(2px, 0); opacity: 0.6; }
+    .g { transform: translate(-2px, 0); opacity: 0.6; }
+    .b { transform: translate(0, 2px); opacity: 0.6; }
+
+    .overlay {
+      mix-blend-mode: overlay;
+      animation: rgbFlow 10s linear infinite;
+    }
+
+    @keyframes rgbFlow {
+      0% { filter: hue-rotate(0deg); }
+      100% { filter: hue-rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <svg viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid meet">
+    <defs>
+      <filter id="liquido">
+        <feTurbulence id="turb" type="turbulence" baseFrequency="0.015" numOctaves="2" result="turb"/>
+        <feDisplacementMap in2="turb" in="SourceGraphic" scale="30" xChannelSelector="R" yChannelSelector="G"/>
+        <animate xlink:href="#turb" attributeName="baseFrequency" dur="6s" values="0.015;0.03;0.015" repeatCount="indefinite"/>
+      </filter>
+
+      <!-- Gradiente RGB animado -->
+      <linearGradient id="rgb-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="red"/>
+        <stop offset="25%" stop-color="magenta"/>
+        <stop offset="50%" stop-color="cyan"/>
+        <stop offset="75%" stop-color="lime"/>
+        <stop offset="100%" stop-color="yellow"/>
+      </linearGradient>
+    </defs>
+
+    <!-- Imagen con efecto líquido en capas RGB -->
+    <image href="img/efecto.jpg" x="100" y="50" width="800" height="500" class="r" filter="url(#liquido)" />
+    <image href="img/efecto.jpg" x="100" y="50" width="800" height="500" class="g" filter="url(#liquido)" />
+    <image href="img/efecto.jpg" x="100" y="50" width="800" height="500" class="b" filter="url(#liquido)" />
+
+    <!-- Capa de luz RGB encima -->
+    <rect x="100" y="50" width="800" height="500" fill="url(#rgb-gradient)" class="overlay" opacity="0.3" />
+  </svg>
+
+</body>
+</html>

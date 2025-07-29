@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creemos Contenidos</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+    }
+
+    nav {
+      display: flex;
+      justify-content: flex-end;
+      padding: 20px;
+      background-color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav a {
+      margin-right: 20px;
+      text-decoration: none;
+      color: black;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #4A237A;
+    }
+
+    /* Sección principal */
+    .hero {
+      background-color: #4A237A;
+      color: white;
+      padding: 50px 20px;
+    }
+
+    .hero-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: auto;
+      gap: 40px;
+    }
+
+    .hero-text {
+      flex: 1;
+      min-width: 300px;
+      text-align: left;
+    }
+
+    .hero-text h2 {
+      font-size: 1.8em;
+      margin-bottom: 10px;
+    }
+
+    .hero-text h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    .hero-text p {
+      margin-bottom: 10px;
+    }
+
+    .hero-image {
+      flex: 1;
+      min-width: 200px;
+      text-align: center;
+    }
+
+    .hero-image img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .hero-image img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Secciones generales */
+    section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: auto;
+      text-align: left;
+    }
+
+    .plans {
+      max-width: 900px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #4A237A;
+      color: white;
+      padding: 40px 20px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      text-align: center;
+      gap: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .social-icon img {
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      cursor: pointer;
+    }
+
+    .social-icon img:hover {
+      transform: scale(1.3);
+      opacity: 0.8;
+    }
+
+    @media (max-width: 768px) {
+      .hero-text h1 {
+        font-size: 2em;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      nav a {
+        margin: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="quienes_somos.html">Quienes Somos </a>
+    <a href="servicios.html">Servicios</a>
+    <a href="blog.html">Blog</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
+
+
+  <!-- Encabezado principal -->
+  <section class="hero">
+    <div class="hero-container">
+      <div class="hero-text">
+        <h2>Hola, somos creadores de contenidos.</h2>
+        <h1>Crea, conecta e impacta.</h1>
+        <p>Creamos contenido que inspira, educa y entretiene para conectar con tu audiencia.</p>
+        <p>Te acompañamos a hacerlo posible.</p>
+      </div>
+      <div class="hero-image">
+        <img src="img/camara.jpg" alt="Imagen representativa">
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios -->
+  <section>
+    <h2>Nuestros servicios de Marketing de Contenidos</h2>
+    <div class="grid-4">
+      <div>
+        <strong>Creación de contenidos</strong><br>
+        Haz que tus publicaciones destaquen con contenido atractivo.
+      </div>
+      <div>
+        <strong>Gestión de redes sociales</strong><br>
+        Planificación y seguimiento de tus perfiles.
+      </div>
+      <div>
+        <strong>Asesoría en redes</strong><br>
+        Recomendaciones personalizadas para optimizar publicaciones.
+      </div>
+      <div>
+        <strong>Retargeting Efectivo</strong><br>
+        Email marketing para fidelizar clientes de forma efectiva.
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonios -->
+  <section style="background-color: #4A237A; color: white;">
+    <h2>Testimonios</h2>
+    <div class="grid-3">
+      <div>
+        <strong>Carmen Moya</strong><br>
+        La experiencia fue increíble. Me ayudaron a diseñar una estrategia adaptativa.
+      </div>
+      <div>
+        <strong>Julia Serna</strong><br>
+        Muy contentos con los resultados. Recomendados 100%.
+      </div>
+      <div>
+        <strong>Andrés Murillo</strong><br>
+        Una empresa innovadora y de confianza. Muy comprometidos.
+      </div>
+    </div>
+  </section>
+
+  <!-- Planes -->
+  <section>
+    <h2>Planes</h2>
+    <div class="plans">
+      <div><strong>Plan Redes Sociales Básico</strong><br>8 contenidos: 2 reels, 2 videos, 2 carruseles, 2 post, automatización.</div>
+      <div><strong>Plan Emprendedores</strong><br>12 contenidos: 3 reels, 3 videos, 3 carruseles, 3 post, automatización.</div>
+      <div><strong>Plan Empresas</strong><br>12 contenidos: 3 reels, 3 videos, 3 carruseles, 3 post, automatización.</div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <p><strong>Contacto</strong><br>
+        hola@creamoscontenidos.com<br>
+        +57 323 993 1119</p>
+      </div>
+
+      <div>
+        <p><strong>Síguenos</strong></p>
+        <div style="margin-top: 10px; display: flex; justify-content: center; gap: 20px;">
+          <a href="#" class="social-icon">
+            <img src="img/pinterest.png" alt="Pinterest" width="30">
+          </a>
+          <a href="#" class="social-icon">
+            <img src="img/facebook.png" alt="Facebook" width="30">
+          </a>
+          <a href="#" class="social-icon">
+            <img src="img/instagram.png" alt="Instagram" width="30">
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <p><strong>Dirección</strong><br>
+        Carrera 9 No 28 – 55, Barrio el Silencio<br>
+        Quibdó, Chocó</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

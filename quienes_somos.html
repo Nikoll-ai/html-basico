@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creemos Contenidos</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+    }
+
+    nav {
+      display: flex;
+      justify-content: flex-end;
+      padding: 20px;
+      background-color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav a {
+      margin-right: 20px;
+      text-decoration: none;
+      color: black;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #4A237A;
+    }
+
+    /* Sección principal */
+    .hero {
+      background-color: #4A237A;
+      color: white;
+      padding: 50px 20px;
+    }
+
+    .hero-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: auto;
+      gap: 40px;
+    }
+
+    .hero-text {
+      flex: 1;
+      min-width: 300px;
+      text-align: left;
+    }
+
+    .hero-text h2 {
+      font-size: 1.8em;
+      margin-bottom: 10px;
+    }
+
+    .hero-text h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    .hero-text p {
+      margin-bottom: 10px;
+    }
+
+    .hero-image {
+      flex: 1;
+      min-width: 200px;
+      text-align: center;
+    }
+
+    .hero-image img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .hero-image img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Secciones generales */
+    section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: auto;
+      text-align: left;
+    }
+
+    .plans {
+      max-width: 900px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #4A237A;
+      color: white;
+      padding: 40px 20px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      text-align: center;
+      gap: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .social-icon img {
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      cursor: pointer;
+    }
+
+    .social-icon img:hover {
+      transform: scale(1.3);
+      opacity: 0.8;
+    }
+
+    @media (max-width: 768px) {
+      .hero-text h1 {
+        font-size: 2em;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      nav a {
+        margin: 10px;
+      }
+    }
+    .service-row {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        margin-bottom: 40px;
+        flex-wrap: wrap; /* para que en pantallas pequeñas se apilen */
+      }
+      
+      .service-image {
+        flex: 0 0 150px; /* ancho fijo para la imagen */
+        text-align: center;
+      }
+      
+      .service-image img {
+        width: 140px;
+        height: 140px;
+        border-radius: 50%; /* imagen circular */
+        object-fit: cover;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        transition: transform 0.3s ease;
+      }
+      
+      .service-image img:hover {
+        transform: scale(1.05);
+      }
+      
+      .service-text {
+        flex: 1;
+        min-width: 250px;
+        text-align: left;
+      }
+      
+      .service-text h3 {
+        font-size: 1.4em;
+        margin-bottom: 10px;
+        color: #4A237A;
+      }
+      
+      .service-text p {
+        font-size: 1em;
+        line-height: 1.4;
+        color: #333;
+      }
+      
+      /* Responsive para móviles */
+      @media (max-width: 600px) {
+        .service-row {
+          flex-direction: column;
+          text-align: center;
+        }
+      
+        .service-text {
+          min-width: auto;
+        }
+      }
+      .highlighted-row {
+        background-color: #4A237A;
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+      }
+      
+      /* Para que el texto dentro del .highlighted-row tenga color blanco */
+      .highlighted-row .service-text h3,
+      .highlighted-row .service-text p {
+        color: white;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+        background-color: #fff;
+        color: #333;
+      }
+  
+      header {
+        background-color: #4A237A;
+        color: white;
+        padding: 30px 20px;
+        text-align: center;
+      }
+  
+      header h1 {
+        margin: 0;
+        font-size: 2.5em;
+      }
+  
+      section.about {
+        padding: 60px 20px;
+        max-width: 1100px;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        align-items: center;
+        justify-content: space-between;
+      }
+  
+      .about-text {
+        flex: 1;
+        min-width: 300px;
+      }
+  
+      .about-text h2 {
+        color: #4A237A;
+        font-size: 2em;
+        margin-bottom: 20px;
+      }
+  
+      .about-text p {
+        font-size: 1.1em;
+        text-align: justify;
+      }
+  
+      .about-image {
+        flex: 1;
+        min-width: 300px;
+        text-align: center;
+      }
+  
+      .about-image img {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        object-fit: cover;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+  
+      footer {
+        background-color: #4A237A;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        margin-top: 40px;
+      }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="quienes_somos.html">Quienes Somos </a>
+    <a href="servicios.html">Servicios</a>
+    <a href="blog.html">Blog</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
+ <!-- Encabezado principal -->
+ <header>
+    <h1>Quiénes Somos</h1>
+  </header>
+
+  <section class="about">
+    <div class="about-text">
+      <h2>Creadores de Contenido Digital</h2>
+      <p>
+        Somos un equipo apasionado por la creatividad digital. Nos dedicamos a crear contenido estratégico, atractivo y personalizado que impulsa el crecimiento de tu negocio o presencia en redes sociales. <br><br>
+        A través de una comunicación visual efectiva y herramientas digitales, ayudamos a construir marcas sólidas, conectando con tu audiencia de manera auténtica y profesional. <br><br>
+        Nuestra misión es potenciar tu identidad digital, generar impacto y resultados reales con cada publicación.
+      </p>
+    </div>
+
+    <div class="about-image">
+      <img src="img/somos.jpg" alt="Equipo de creadores">
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <p><strong>Contacto</strong><br>
+        hola@creamoscontenidos.com<br>
+        +57 323 993 1119</p>
+      </div>
+
+      <div>
+        <p><strong>Síguenos</strong></p>
+        <div style="margin-top: 10px; display: flex; justify-content: center; gap: 20px;">
+          <a href="#" class="social-icon">
+            <img src="img/pinterest.png" alt="Pinterest" width="30">
+          </a>
+          <a href="#" class="social-icon">
+            <img src="img/facebook.png" alt="Facebook" width="30">
+          </a>
+          <a href="#" class="social-icon">
+            <img src="img/instagram.png" alt="Instagram" width="30">
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <p><strong>Dirección</strong><br>
+        Carrera 9 No 28 – 55, Barrio el Silencio<br>
+        Quibdó, Chocó</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
